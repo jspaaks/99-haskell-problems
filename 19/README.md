@@ -5,7 +5,7 @@ https://wiki.haskell.org/99_questions/11_to_20
 Rotate a list N places to the left.
 
 ```haskell
-$ ghci                                                                                                                                            
+$ ghci
 GHCi, version 9.4.7: https://www.haskell.org/ghc/  :? for help
 λ :load rotate.hs 
 [1 of 2] Compiling Main             ( rotate.hs, interpreted )
