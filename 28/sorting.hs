@@ -7,7 +7,6 @@ lsort = sortBy f where
     f a b = length a `compare` length b
 
 
-
 lfsort xs = map fst $ sortBy f xs' where
     
     f a b = snd a `compare` snd b
