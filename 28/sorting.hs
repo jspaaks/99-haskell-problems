@@ -8,9 +8,9 @@ lsort = sortBy f where
 
 
 lfsort xs = map fst $ sortBy f xs' where
-    
+
     f a b = snd a `compare` snd b
-    
+
     xs' = zip xs (occurrence $ lengths xs) where
         lengths = map length
 
