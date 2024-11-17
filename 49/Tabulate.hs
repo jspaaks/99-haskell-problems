@@ -2,7 +2,6 @@ module Tabulate ( tabulateBin
                 , tabulateOct
                 , tabulateHex
                 , tabulate
-                , graycode
                 ) where
 
     import Numeric (showIntAtBase)
@@ -24,15 +23,3 @@ module Tabulate ( tabulateBin
 
         nsymbols = length symbols
         nrows = nsymbols ^ ndigits - 1
-
-
-    graycode n = f [['0', '1']] n where
-        f xss n
-            | n > 0     = f xss (n - 1)
-            | otherwise = xss
-            where
-                xss' = as <> [bs]
-                as = map appendMirrored xss
-                bs = concat $ map (replicate 2) (last xss)
-                appendMirrored xs = xs : reverse xs
-

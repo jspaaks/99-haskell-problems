@@ -10,7 +10,7 @@ module Graycode (graycode) where
             | otherwise = xss
             where
                 xss' = [as] <> bs
-                as = concat $ map (replicate 2) (head xss)
+                as = concatMap (replicate 2) (head xss)
                 bs = map appendMirrored xss
                 appendMirrored xs = xs <> reverse xs
         symbols = ['0', '1']
