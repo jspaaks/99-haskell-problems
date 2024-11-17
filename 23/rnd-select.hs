@@ -4,12 +4,13 @@ import System.Random ( random
 import Data.List (sortBy)
 
 
-rndSelect :: RandomGen g => [a] -> Int -> g -> ([a], g)
+rndSelect :: (Integral b, RandomGen g) => [a] -> b -> g -> ([a], g)
 rndSelect xs n gen = (xs', gen') where
-    xs' = map snd $ take n $ sortBy f tups
+    xs' = map snd $ take n' $ sortBy f tups
     (rs, gen') = randomInts ell [] gen
     f a b = fst a `compare` fst b
     tups = zip rs xs
+    n' = fromIntegral n
     ell = length xs
 
 
