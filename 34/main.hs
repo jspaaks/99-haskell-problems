@@ -13,6 +13,7 @@ module Main (main) where
 
 
     totient :: (Integral a) => a -> Int
-    totient x = length $ filter (==1) $ map (gcd x) [1..x]
+    totient x = length $ filter (==1) $ map (gcd x) [1..x'] where
+        x' = x - 1
 
     main = undefined
